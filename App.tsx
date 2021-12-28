@@ -1,12 +1,17 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import {Color} from './src/color/Color';
+import {ColorItem} from './src/color/ColorItem';
+import {SelectorColor} from './src/color/style';
 import store from './src/store';
+import {StyledView} from './style';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Color />
+      <StyledView>
+        <SelectorColor />
+        <ColorItem />
+      </StyledView>
     </Provider>
   );
 };
