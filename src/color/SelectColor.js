@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import {paleLavender, lightPastel, rhythm, cyberGrape} from './colorSlice';
 import {OneButton, SelectorColor} from './style';
 
-export function Color() {
+export function SelectColor() {
   const dispatch = useDispatch();
 
   return (
