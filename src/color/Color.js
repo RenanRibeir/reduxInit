@@ -1,30 +1,22 @@
 import React from 'react';
-import {Text, View, Button} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import {red, purple} from './colorSlice';
+import {paleLavender, lightPastel, rhythm, cyberGrape} from './colorSlice';
+import {OneButton, StyledView, ItemColor, SelectorColor} from './style';
 
 export function Color() {
   const color = useSelector(state => state.color.value);
   const dispatch = useDispatch();
 
   return (
-    <View>
-      <View>
-        <Button
-          title="Red"
-          aria-label="Increment value"
-          onPress={() => dispatch(red())}
-        />
-        <Button
-          title="Purple"
-          aria-label="Decrement value"
-          onPress={() => dispatch(purple())}
-        />
-      </View>
+    <StyledView>
+      <SelectorColor>
+        <OneButton color={'#E4CDFF'} onPress={() => dispatch(paleLavender())} />
+        <OneButton color={'#B19CD9'} onPress={() => dispatch(lightPastel())} />
+        <OneButton color={'#816EA7'} onPress={() => dispatch(rhythm())} />
+        <OneButton color={'#534278'} onPress={() => dispatch(cyberGrape())} />
+      </SelectorColor>
 
-      <View>
-        <Text style={{color: color}}>{color}</Text>
-      </View>
-    </View>
+      <ItemColor color={color} />
+    </StyledView>
   );
 }
